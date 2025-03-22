@@ -5,17 +5,23 @@ import { Link } from 'react-router-dom';
 type ButtonVariant = 'primary' | 'secondary' | 'outline' | 'white' | 'ghost';
 type ButtonSize = 'sm' | 'md' | 'lg';
 
-interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+interface ButtonProps {
+  children: React.ReactNode;
   variant?: ButtonVariant;
   size?: ButtonSize;
   icon?: React.ReactNode;
   iconPosition?: 'left' | 'right';
   fullWidth?: boolean;
+  className?: string;
   href?: string;
   to?: string;
   external?: boolean;
+  disabled?: boolean;
   whileHoverScale?: number;
   whileTapScale?: number;
+  type?: 'button' | 'submit' | 'reset';
+  onClick?: (event: React.MouseEvent<HTMLButtonElement | HTMLAnchorElement>) => void;
+  // Add any other props that you commonly use
 }
 
 const Button: React.FC<ButtonProps> = ({
@@ -32,7 +38,9 @@ const Button: React.FC<ButtonProps> = ({
   disabled,
   whileHoverScale = 1.03,
   whileTapScale = 0.97,
-  ...props
+  type = 'button',
+  onClick,
+
 }) => {
   // Configurações de variantes
   const variantClasses = {
@@ -79,8 +87,9 @@ const Button: React.FC<ButtonProps> = ({
         className={buttonClasses}
         target={external ? '_blank' : undefined}
         rel={external ? 'noopener noreferrer' : undefined}
-        whileHover={{ scale: disabled ? 1 : whileHoverScale }}
-        whileTap={{ scale: disabled ? 1 : whileTapScale }}
+        whileHover={disabled ? undefined : { scale: whileHoverScale }}
+        whileTap={disabled ? undefined : { scale: whileTapScale }}
+        onClick={onClick}
       >
         {ButtonContent}
       </motion.a>
@@ -90,10 +99,14 @@ const Button: React.FC<ButtonProps> = ({
   if (to) {
     return (
       <motion.div
-        whileHover={{ scale: disabled ? 1 : whileHoverScale }}
-        whileTap={{ scale: disabled ? 1 : whileTapScale }}
+        whileHover={disabled ? undefined : { scale: whileHoverScale }}
+        whileTap={disabled ? undefined : { scale: whileTapScale }}
       >
-        <Link to={to} className={buttonClasses}>
+        <Link 
+          to={to} 
+          className={buttonClasses}
+          onClick={onClick as any}
+        >
           {ButtonContent}
         </Link>
       </motion.div>
@@ -104,9 +117,10 @@ const Button: React.FC<ButtonProps> = ({
     <motion.button
       className={buttonClasses}
       disabled={disabled}
-      whileHover={{ scale: disabled ? 1 : whileHoverScale }}
-      whileTap={{ scale: disabled ? 1 : whileTapScale }}
-      {...props}
+      whileHover={disabled ? undefined : { scale: whileHoverScale }}
+      whileTap={disabled ? undefined : { scale: whileTapScale }}
+      type={type}
+      onClick={onClick}
     >
       {ButtonContent}
     </motion.button>

@@ -41,7 +41,7 @@ function useIntersectionObserver<T extends Element>(
     };
   }, [threshold, root, rootMargin, frozen]);
   
-  return [ref, isIntersecting, entry];
+  return [ref as RefObject<T>, isIntersecting, entry];
 }
 
 export default useIntersectionObserver;

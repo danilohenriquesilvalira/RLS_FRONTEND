@@ -36,8 +36,7 @@ const IndustriesSection = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-7 gap-4 mb-16">
           {industriesData.map((industry, index) => {
-            // Desestruturando para extrair o componente Icon
-            const { icon: Icon } = industry;
+            const Icon = industry.icon;
             
             return (
               <motion.button
@@ -74,7 +73,7 @@ const IndustriesSection = () => {
           >
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
               <div>
-                {/* Correção aqui - usar a desestruturação para obter o componente Icon */}
+                {/* Correção do componente Icon */}
                 <div className={`w-16 h-16 rounded-2xl mb-6 flex items-center justify-center bg-gradient-to-br ${industriesData[activeIndustry].color} text-white`}>
                   {(() => {
                     const Icon = industriesData[activeIndustry].icon;

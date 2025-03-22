@@ -9,8 +9,7 @@ gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 export const animateTextReveal = (elementSelector: string, delay: number = 0) => {
   const element = document.querySelector(elementSelector);
   if (!element) return;
-  
-  // Alternativa ao SplitText: animar todo o elemento
+
   gsap.from(element, {
     opacity: 0,
     y: 20,
@@ -18,24 +17,22 @@ export const animateTextReveal = (elementSelector: string, delay: number = 0) =>
     ease: "power2.out",
     delay,
   });
-  
-  // Não é necessário limpar como seria com SplitText
+
   return () => {};
 };
 
 // Alternativa para animar texto por caracteres usando HTML
 export const setupTextAnimation = (elementSelector: string) => {
   const elements = document.querySelectorAll(elementSelector);
-  
+
   elements.forEach((element) => {
     if (!element || !element.textContent) return;
-    
+
     // Obter o texto original
     const text = element.textContent;
-    
     // Limpar o conteúdo
     element.textContent = '';
-    
+
     // Criar um span para cada caractere
     text.split('').forEach((char) => {
       const span = document.createElement('span');
@@ -44,7 +41,7 @@ export const setupTextAnimation = (elementSelector: string) => {
       span.style.display = 'inline-block';
       element.appendChild(span);
     });
-    
+
     // Animar os spans separadamente
     const chars = element.querySelectorAll('span');
     gsap.to(chars, {
@@ -64,7 +61,7 @@ export const setupTextAnimation = (elementSelector: string) => {
 // Animação de entrada para elementos baseada em scroll
 export const animateOnScroll = (elementSelector: string, options = {}) => {
   const elements = gsap.utils.toArray(elementSelector);
-  
+
   elements.forEach((element: any) => {
     gsap.from(element, {
       opacity: 0,
@@ -84,7 +81,7 @@ export const animateOnScroll = (elementSelector: string, options = {}) => {
 // Animação de parallax para background
 export const createParallax = (elementSelector: string, strength: number = 0.3) => {
   const elements = gsap.utils.toArray(elementSelector);
-  
+
   elements.forEach((element: any) => {
     gsap.to(element, {
       yPercent: strength * 100,
@@ -103,29 +100,32 @@ export const createParallax = (elementSelector: string, strength: number = 0.3) 
 export const animateCounter = (elementSelector: string, endValue: number, duration: number = 2, delay: number = 0) => {
   const element = document.querySelector(elementSelector);
   if (!element) return;
-  
-  gsap.from(element, {
-    innerText: 0,
-    duration,
-    delay,
-    snap: { innerText: 1 },
-    onUpdate: function() {
-      element.textContent = Math.ceil(gsap.getProperty(this.targets()[0], "innerText") as number).toString();
-    },
-    scrollTrigger: {
-      trigger: element,
-      start: "top 80%",
-    },
-  });
+
+  gsap.fromTo(
+    element,
+    { innerText: 0 },
+    {
+      innerText: endValue,
+      duration,
+      delay,
+      snap: { innerText: 1 },
+      onUpdate: function () {
+        element.textContent = Math.ceil(gsap.getProperty(this.targets()[0], "innerText") as number).toString();
+      },
+      scrollTrigger: {
+        trigger: element,
+        start: "top 80%",
+      },
+    }
+  );
 };
 
 // Animação de staggered cards
 export const animateStaggeredCards = (containerSelector: string, cardSelector: string) => {
   const container = document.querySelector(containerSelector);
   if (!container) return;
-  
+
   const cards = container.querySelectorAll(cardSelector);
-  
   gsap.from(cards, {
     opacity: 0,
     y: 50,

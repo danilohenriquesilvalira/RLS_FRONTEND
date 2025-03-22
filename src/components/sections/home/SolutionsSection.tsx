@@ -1,12 +1,9 @@
-import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import Button from '@/components/ui/Button';
 import solutionsData from '@/data/solutionsData';
 
 const SolutionsSection = () => {
-  const [hoveredSolution, setHoveredSolution] = useState<number | null>(null);
-
   return (
     <section 
       className="py-20 relative overflow-hidden"
@@ -61,8 +58,6 @@ const SolutionsSection = () => {
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ delay: index * 0.1, duration: 0.5 }}
                 whileHover={{ y: -5 }}
-                onMouseEnter={() => setHoveredSolution(index)}
-                onMouseLeave={() => setHoveredSolution(null)}
               >
                 <div className="relative z-10">
                   <div className="w-16 h-16 rounded-2xl mb-6 flex items-center justify-center bg-gradient-to-br from-primary-500 to-secondary-500 text-white shadow-lg group-hover:from-primary-400 group-hover:to-secondary-400 transition-all duration-300">

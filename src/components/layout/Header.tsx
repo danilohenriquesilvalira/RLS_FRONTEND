@@ -108,7 +108,7 @@ const Header = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-2">
-            {navItems.map((item, index) => (
+            {navItems.map((item) => (
               <div key={item.title} className="relative group">
                 {item.hasDropdown ? (
                   <>
