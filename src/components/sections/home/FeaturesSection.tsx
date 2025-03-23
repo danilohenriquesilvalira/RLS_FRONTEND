@@ -1,3 +1,4 @@
+// src/components/sections/home/FeaturesSection.tsx
 import { useEffect, useRef } from 'react';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
@@ -172,7 +173,7 @@ const FeaturesSection = () => {
               <div className="relative h-64 md:h-full">
                 <div className="relative h-full w-full rounded-lg overflow-hidden shadow-lg">
                   <img 
-                    src="/images/dashboard-example.jpg" 
+                    src="/images/dashboard-example.avif" 
                     alt="Dashboard de monitoramento industrial" 
                     className="w-full h-full object-cover"
                   />

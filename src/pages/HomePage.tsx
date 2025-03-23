@@ -1,9 +1,12 @@
+// src/pages/HomePage.tsx
 import { useEffect } from 'react';
 import Layout from '@/components/layout/Layout';
 import HeroSection from '@/components/sections/home/HeroSection';
 import FeaturesSection from '@/components/sections/home/FeaturesSection';
 import SolutionsSection from '@/components/sections/home/SolutionsSection';
 import IndustriesSection from '@/components/sections/home/IndustriesSection';
+import ClientsSection from '@/components/sections/home/ClientsSection';
+import PartnersSection from '@/components/sections/home/PartnersSection';
 import TestimonialsSection from '@/components/sections/home/TestimonialsSection';
 import CtaSection from '@/components/sections/home/CtaSection';
 
@@ -26,8 +29,10 @@ const HomePage = () => {
     <Layout>
       <HeroSection />
       <FeaturesSection />
-      <IndustriesSection />
       <SolutionsSection />
+      <IndustriesSection />
+      <ClientsSection /> {/* Seção de clientes */}
+      <PartnersSection />
       <TestimonialsSection />
       <CtaSection />
     </Layout>

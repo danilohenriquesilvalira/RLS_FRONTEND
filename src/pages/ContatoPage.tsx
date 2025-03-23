@@ -137,7 +137,7 @@ const ContatoPage = () => {
   return (
     <Layout pageTitle="Contato">
       {/* Hero Banner */}
-      <section className="pt-32 pb-16 md:pt-40 md:pb-20 bg-gradient-to-r from-secondary-800 to-primary-800 text-white">
+      <section className="pt-32 pb-16 md:pt-40 md:pb-20 bg-gradient-to-r from-blue-900 to-indigo-800 text-white">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl">
             <motion.h1 
@@ -149,7 +149,7 @@ const ContatoPage = () => {
               Entre em Contato
             </motion.h1>
             <motion.p 
-              className="text-xl text-primary-100 mb-8"
+              className="text-xl text-blue-100 mb-8"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
@@ -176,25 +176,25 @@ const ContatoPage = () => {
                 <div className="space-y-6 mb-8">
                   {[
                     { 
-                      icon: <MapPin className="text-primary-600" size={24} />, 
+                      icon: <MapPin className="text-blue-600" size={24} />, 
                       title: 'Morada',
                       content: 'Estrada Nacional 247, Km 64.5, Parque Charal, Armazém 12 2705-837 Terrugem, Sintra, Lisboa, Portugal',
                       link: 'https://maps.google.com/?q=Estrada+Nacional+247+Km+64.5+Parque+Charal+Armazém+12+2705-837+Terrugem+Sintra+Lisboa+Portugal'
                     },
                     { 
-                      icon: <Phone className="text-primary-600" size={24} />, 
+                      icon: <Phone className="text-blue-600" size={24} />, 
                       title: 'Telefone',
                       content: '+351 935 479 757',
                       link: 'tel:+351935479757'
                     },
                     { 
-                      icon: <Mail className="text-primary-600" size={24} />, 
+                      icon: <Mail className="text-blue-600" size={24} />, 
                       title: 'E-mail',
                       content: 'danilosilvalira@hotmail.com',
                       link: 'mailto:danilosilvalira@hotmail.com'
                     },
                     { 
-                      icon: <Clock className="text-primary-600" size={24} />, 
+                      icon: <Clock className="text-blue-600" size={24} />, 
                       title: 'Horário de Atendimento',
                       content: 'Segunda a Sexta: 9h às 18h',
                       link: '#'
@@ -209,7 +209,7 @@ const ContatoPage = () => {
                     >
                       <div className="mr-4 mt-1">{item.icon}</div>
                       <div>
-                        <div className="font-medium text-gray-800 group-hover:text-primary-600 transition-colors">{item.title}</div>
+                        <div className="font-medium text-gray-800 group-hover:text-blue-600 transition-colors">{item.title}</div>
                         <div className="text-gray-600">{item.content}</div>
                       </div>
                     </a>
@@ -222,7 +222,7 @@ const ContatoPage = () => {
                     <a 
                       key={social}
                       href="#"
-                      className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 hover:bg-primary-600 hover:text-white transition-colors"
+                      className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 hover:bg-blue-600 hover:text-white transition-colors"
                       aria-label={`Siga-nos no ${social}`}
                     >
                       {social.charAt(0).toUpperCase()}
@@ -258,6 +258,7 @@ const ContatoPage = () => {
                     variant="primary"
                     size="md"
                     onClick={() => setIsSubmitted(false)}
+                    className="bg-blue-600 hover:bg-blue-700 focus:ring-blue-500"
                   >
                     Enviar nova mensagem
                   </Button>
@@ -282,7 +283,7 @@ const ContatoPage = () => {
                         name="name"
                         value={formState.name}
                         onChange={handleChange}
-                        className={`w-full px-4 py-3 rounded-lg border ${formErrors.name ? 'border-red-500' : 'border-gray-300'} focus:outline-none focus:ring-2 focus:ring-primary-500`}
+                        className={`w-full px-4 py-3 rounded-lg border ${formErrors.name ? 'border-red-500' : 'border-gray-300'} focus:outline-none focus:ring-2 focus:ring-blue-500`}
                         placeholder="Seu nome"
                       />
                       {formErrors.name && <p className="text-red-500 text-sm mt-1">{formErrors.name}</p>}
@@ -296,7 +297,7 @@ const ContatoPage = () => {
                         name="email"
                         value={formState.email}
                         onChange={handleChange}
-                        className={`w-full px-4 py-3 rounded-lg border ${formErrors.email ? 'border-red-500' : 'border-gray-300'} focus:outline-none focus:ring-2 focus:ring-primary-500`}
+                        className={`w-full px-4 py-3 rounded-lg border ${formErrors.email ? 'border-red-500' : 'border-gray-300'} focus:outline-none focus:ring-2 focus:ring-blue-500`}
                         placeholder="seu.email@exemplo.com"
                       />
                       {formErrors.email && <p className="text-red-500 text-sm mt-1">{formErrors.email}</p>}
@@ -310,7 +311,7 @@ const ContatoPage = () => {
                         name="phone"
                         value={formState.phone}
                         onChange={handleChange}
-                        className={`w-full px-4 py-3 rounded-lg border ${formErrors.phone ? 'border-red-500' : 'border-gray-300'} focus:outline-none focus:ring-2 focus:ring-primary-500`}
+                        className={`w-full px-4 py-3 rounded-lg border ${formErrors.phone ? 'border-red-500' : 'border-gray-300'} focus:outline-none focus:ring-2 focus:ring-blue-500`}
                         placeholder="+351 000 000 000"
                       />
                       {formErrors.phone && <p className="text-red-500 text-sm mt-1">{formErrors.phone}</p>}
@@ -324,7 +325,7 @@ const ContatoPage = () => {
                         name="company"
                         value={formState.company}
                         onChange={handleChange}
-                        className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary-500"
+                        className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
                         placeholder="Nome da sua empresa"
                       />
                     </div>
@@ -337,7 +338,7 @@ const ContatoPage = () => {
                       name="subject"
                       value={formState.subject}
                       onChange={handleChange}
-                      className={`w-full px-4 py-3 rounded-lg border ${formErrors.subject ? 'border-red-500' : 'border-gray-300'} focus:outline-none focus:ring-2 focus:ring-primary-500`}
+                      className={`w-full px-4 py-3 rounded-lg border ${formErrors.subject ? 'border-red-500' : 'border-gray-300'} focus:outline-none focus:ring-2 focus:ring-blue-500`}
                     >
                       <option value="">Selecione um assunto</option>
                       <option value="orçamento">Solicitar orçamento</option>
@@ -357,7 +358,7 @@ const ContatoPage = () => {
                       value={formState.message}
                       onChange={handleChange}
                       rows={5}
-                      className={`w-full px-4 py-3 rounded-lg border ${formErrors.message ? 'border-red-500' : 'border-gray-300'} focus:outline-none focus:ring-2 focus:ring-primary-500`}
+                      className={`w-full px-4 py-3 rounded-lg border ${formErrors.message ? 'border-red-500' : 'border-gray-300'} focus:outline-none focus:ring-2 focus:ring-blue-500`}
                       placeholder="Descreva sua necessidade..."
                     ></textarea>
                     {formErrors.message && <p className="text-red-500 text-sm mt-1">{formErrors.message}</p>}
@@ -368,7 +369,7 @@ const ContatoPage = () => {
                       type="submit"
                       variant="primary"
                       size="lg"
-                      className="w-full md:w-auto"
+                      className="w-full md:w-auto bg-blue-600 hover:bg-blue-700 focus:ring-blue-500"
                       disabled={isSubmitting}
                       icon={isSubmitting ? undefined : <ArrowRight size={18} />}
                     >
@@ -406,7 +407,7 @@ const ContatoPage = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-800">
-              Perguntas <span className="text-primary-600">Frequentes</span>
+              Perguntas <span className="text-blue-600">Frequentes</span>
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
               Respostas para as dúvidas mais comuns sobre nossos serviços.

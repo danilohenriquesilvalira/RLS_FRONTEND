@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { MapPin, Phone, Mail, Clock, Cpu, Facebook, Instagram, Linkedin, Youtube } from 'lucide-react';
+import { MapPin, Phone, Mail, Clock, Cpu, Facebook, Instagram, Linkedin, Youtube, MessageCircle } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const Footer = () => {
@@ -73,33 +73,33 @@ const Footer = () => {
 
   return (
     <footer className="bg-gray-900 text-gray-300">
-      {/* Footer Top - Newsletter */}
+      {/* Footer Top - CTA melhorado */}
       <div className="border-b border-gray-800">
         <div className="container mx-auto px-4 py-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
             <div>
-              <h3 className="text-2xl font-bold text-white mb-3">Fique por dentro das novidades</h3>
+              <h3 className="text-2xl font-bold text-white mb-3">Transforme sua indústria agora</h3>
               <p className="text-gray-400">
-                Assine nossa newsletter e receba as últimas notícias e atualizações sobre automação industrial.
+                Entre em contato para uma avaliação personalizada das suas necessidades industriais.
               </p>
             </div>
-            <div>
-              <form className="flex flex-col sm:flex-row gap-3">
-                <input 
-                  type="email" 
-                  placeholder="Seu e-mail"
-                  className="flex-grow px-4 py-3 bg-gray-800 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500"
-                  required
-                />
-                <motion.button
-                  whileHover={{ scale: 1.03 }}
-                  whileTap={{ scale: 0.97 }}
-                  type="submit"
-                  className="px-6 py-3 bg-primary-600 text-white rounded-lg font-medium hover:bg-primary-700 transition-colors"
-                >
-                  Assinar
-                </motion.button>
-              </form>
+            <div className="flex flex-col md:flex-row gap-4">
+              <a 
+                href="tel:+351935479757" 
+                className="px-6 py-3 bg-white text-primary-600 rounded-lg font-medium hover:bg-gray-100 transition-colors flex items-center justify-center"
+              >
+                <Phone size={18} className="mr-2" />
+                Ligar Agora
+              </a>
+              <a 
+                href="https://wa.me/351935479757" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="px-6 py-3 bg-green-600 text-white rounded-lg font-medium hover:bg-green-700 transition-colors flex items-center justify-center"
+              >
+                <MessageCircle size={18} className="mr-2" />
+                WhatsApp
+              </a>
             </div>
           </div>
         </div>
@@ -111,13 +111,11 @@ const Footer = () => {
           {/* Logo e informações */}
           <div className="lg:col-span-2">
             <Link to="/" className="flex items-center space-x-2 mb-6">
-              <div className="relative w-10 h-10 bg-gradient-to-r from-primary-600 to-primary-800 rounded-lg flex items-center justify-center">
-                <Cpu className="text-white" size={20} />
-              </div>
-              <div>
-                <h1 className="text-xl font-bold text-white">RLS</h1>
-                <p className="text-xs text-gray-400 -mt-1">AUTOMAÇÃO INDUSTRIAL</p>
-              </div>
+              <img 
+                src="/images/Logo_RLS.svg" 
+                alt="RLS Automação Industrial" 
+                className="h-12 w-auto"
+              />
             </Link>
             
             <p className="text-gray-400 mb-6">
