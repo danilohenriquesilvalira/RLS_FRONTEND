@@ -97,7 +97,7 @@ const Header = () => {
               transition={{ type: "spring", stiffness: 400, damping: 10 }}
             >
               <img 
-                src="/images/Logo_RLS.svg" 
+                src={`${import.meta.env.BASE_URL}images/Logo_RLS.svg`} 
                 alt="RLS Automação Industrial" 
                 className="h-14 w-auto" // Aumentado sutilmente de h-12 para h-14
               />
