@@ -52,7 +52,10 @@ const HeroSection = () => {
       {/* Background de imagem em tela cheia com overlay */}
       <div ref={bgRef} className="absolute inset-0 z-0">
         {/* Imagem de fundo */}
-        <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('/images/hero-bg.avif')" }} />
+        <div 
+          className="absolute inset-0 bg-cover bg-center" 
+          style={{ backgroundImage: `url('${import.meta.env.BASE_URL}images/hero-bg.avif')` }} 
+        />
         
         {/* Overlay gradiente */}
         <div className="absolute inset-0 bg-gradient-to-r from-blue-900/90 to-indigo-900/80" />

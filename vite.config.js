@@ -9,7 +9,7 @@ const __dirname = dirname(__filename)
 
 export default defineConfig({
   // Adicione a base do seu repositório aqui
-  base: '/rls-automacao-website/',
+  base: '/RLS_FRONTEND/',
 
   plugins: [react()],
   resolve: {
