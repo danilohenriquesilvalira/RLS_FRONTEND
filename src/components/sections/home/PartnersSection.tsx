@@ -31,12 +31,12 @@ const PartnersSection = () => {
 
   // Lista de parceiros com seus logos
   const partners = [
-    { name: 'Elipse', logo: '/images/parceiros/Elipse.jpg' },
-    { name: 'GE', logo: '/images/parceiros/GE.jpg' },
-    { name: 'Schneider Electric', logo: '/images/parceiros/Schneider_Logo.svg' },
-    { name: 'Rockwell Automation', logo: '/images/parceiros/Rockwell_Logo.svg' },
-    { name: 'Siemens', logo: '/images/parceiros/Siemens_Logo.svg' },
-    { name: 'Aveva', logo: '/images/parceiros/Aveva_logo.svg' }
+    { name: 'Elipse', logo: `${import.meta.env.BASE_URL}images/parceiros/Elipse.jpg` },
+    { name: 'GE', logo: `${import.meta.env.BASE_URL}images/parceiros/GE.jpg` },
+    { name: 'Schneider Electric', logo: `${import.meta.env.BASE_URL}images/parceiros/Schneider_Logo.svg` },
+    { name: 'Rockwell Automation', logo: `${import.meta.env.BASE_URL}images/parceiros/Rockwell_Logo.svg` },
+    { name: 'Siemens', logo: `${import.meta.env.BASE_URL}images/parceiros/Siemens_Logo.svg` },
+    { name: 'Aveva', logo: `${import.meta.env.BASE_URL}images/parceiros/Aveva_logo.svg` }
   ];
   
   const totalSlides = Math.ceil(partners.length / itemsPerView);

@@ -6,7 +6,7 @@ import {
   PillBottle, 
   Truck, 
   Cog, 
-  Pipette // Alterado de Flask para Pipette, que existe na biblioteca lucide-react
+  Pipette
 } from 'lucide-react';
 
 export interface IndustryDetail {
@@ -32,7 +32,7 @@ const industriesDetailsData: IndustryDetail[] = [
     color: 'bg-blue-500',
     shortDescription: 'Sistemas de controle avançados para linhas de produção com monitoramento em tempo real.',
     description: 'Soluções de automação e controle para otimizar processos de fabricação, aumentar a eficiência e reduzir custos de produção, com foco em digitalização e Indústria 4.0.',
-    image: '/images/industries/Manufatura.jpg',
+    image: `${import.meta.env.BASE_URL}images/industries/Manufatura.jpg`,
     features: [
       'Controle e monitoramento remoto',
       'Integração com sistemas MES/ERP',
@@ -52,7 +52,7 @@ const industriesDetailsData: IndustryDetail[] = [
     color: 'bg-purple-500',
     shortDescription: 'Soluções robustas de automação para ambientes críticos com foco em segurança.',
     description: 'Sistemas de controle e automação para processos petroquímicos complexos, garantindo operação segura, eficiente e dentro das normas regulatórias.',
-    image: '/images/industries/Petroquimica.jpg',
+    image: `${import.meta.env.BASE_URL}images/industries/Petroquimica.jpg`,
     features: [
       'Sistemas de segurança e redundância',
       'Monitoramento de ativos críticos',
@@ -72,7 +72,7 @@ const industriesDetailsData: IndustryDetail[] = [
     color: 'bg-green-500',
     shortDescription: 'Integração de sistemas para garantir rastreabilidade, qualidade e eficiência.',
     description: 'Soluções de automação para indústria alimentícia, com foco em rastreabilidade, segurança alimentar e otimização de processos de produção e embalagem.',
-    image: '/images/industries/Alimentos.jpg',
+    image: `${import.meta.env.BASE_URL}images/industries/Alimentos.jpg`,
     features: [
       'Controle de qualidade automatizado',
       'Rastreabilidade completa do produto',
@@ -92,7 +92,7 @@ const industriesDetailsData: IndustryDetail[] = [
     color: 'bg-red-500',
     shortDescription: 'Automação de precisão para processos críticos com validação e conformidade.',
     description: 'Sistemas de automação para indústria farmacêutica, garantindo conformidade com normas regulatórias, validação de processos e documentação completa.',
-    image: '/images/industries/Farmaceutica.jpg',
+    image: `${import.meta.env.BASE_URL}images/industries/Farmaceutica.jpg`,
     features: [
       'Sistemas validados (GAMP)',
       'Conformidade com GMP, FDA, ANVISA',
@@ -112,7 +112,7 @@ const industriesDetailsData: IndustryDetail[] = [
     color: 'bg-amber-500',
     shortDescription: 'Sistemas automatizados para gestão de armazéns e rastreamento de produtos.',
     description: 'Soluções de automação para operações logísticas, incluindo sistemas de gerenciamento de armazém, automação de transportadores e rastreamento em tempo real.',
-    image: '/images/industries/Logistica.png',
+    image: `${import.meta.env.BASE_URL}images/industries/Logistica.png`,
     features: [
       'Controle de transportadores',
       'Sistemas de picking automatizado',
@@ -132,7 +132,7 @@ const industriesDetailsData: IndustryDetail[] = [
     color: 'bg-gray-600',
     shortDescription: 'Automação robusta para processos de fundição, laminação e tratamento de metais.',
     description: 'Sistemas de automação para indústria metalúrgica, controlando processos de fundição, laminação, tratamentos térmicos e acabamento com alta precisão.',
-    image: '/images/industries/Metalurgica.jpg',
+    image: `${import.meta.env.BASE_URL}images/industries/Metalurgica.jpg`,
     features: [
       'Controle de fornos e tratamentos térmicos',
       'Monitoramento de temperatura e pressão',
@@ -148,11 +148,11 @@ const industriesDetailsData: IndustryDetail[] = [
   {
     id: 'quimica',
     title: 'Química',
-    icon: Pipette, // Alterado de Flask para Pipette
+    icon: Pipette,
     color: 'bg-teal-500',
     shortDescription: 'Soluções para controle preciso de reações, misturas e processos contínuos.',
     description: 'Soluções para controle preciso de reações, misturas e processos contínuos com foco em segurança e qualidade.',
-    image: '/images/industries/Quimica.jpg',
+    image: `${import.meta.env.BASE_URL}images/industries/Quimica.jpg`,
     features: [
       'Controle avançado de processos',
       'Sistemas de segurança SIL',

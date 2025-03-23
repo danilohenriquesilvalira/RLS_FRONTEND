@@ -166,14 +166,14 @@ const FeaturesSection = () => {
                     <div className="text-gray-500">Custos operacionais</div>
                   </div>
                 </div>
-                <a href="/casos-de-sucesso" className="text-primary-600 font-medium flex items-center hover:text-primary-800 transition-colors">
+                <a href={`${import.meta.env.BASE_URL}casos-de-sucesso`} className="text-primary-600 font-medium flex items-center hover:text-primary-800 transition-colors">
                   Ver todos os casos de sucesso <ArrowRight size={16} className="ml-1" />
                 </a>
               </div>
               <div className="relative h-64 md:h-full">
                 <div className="relative h-full w-full rounded-lg overflow-hidden shadow-lg">
                   <img 
-                    src="/images/dashboard-example.avif" 
+                    src={`${import.meta.env.BASE_URL}images/dashboard-example.avif`} 
                     alt="Dashboard de monitoramento industrial" 
                     className="w-full h-full object-cover"
                   />
